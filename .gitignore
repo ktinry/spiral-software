@@ -3,6 +3,8 @@ _spiral.g
 spiral
 spirald
 send-profiler-cx.sh
+send-profiler-sx.sh
+cx_homedir.txt
 
 # General
 .gap_history
