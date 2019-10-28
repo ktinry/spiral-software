@@ -61,7 +61,7 @@ action='store_true')
 cmdarglist = sys.argv[1:]
 extraargs = os.getenv('PROFILER_LOCAL_ARGS')
 if isinstance(extraargs, str):
-	cmdarglist.extend(extraargs.split())
+	cmdarglist[0:0] = extraargs.split()
 
 args = vars(parser.parse_args(cmdarglist))
 
