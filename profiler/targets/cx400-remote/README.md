@@ -1,4 +1,7 @@
 # CX400-LOCAL
+## Unintended behavior
+- cannot remove tmpdirs in spiral-rmeote
+- 同時に実行すると全く進まなくなる(CX400の問題？)
 
 ## Example
 ```

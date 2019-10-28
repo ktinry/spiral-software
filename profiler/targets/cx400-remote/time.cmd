@@ -3,6 +3,10 @@
 #  Copyright (c) 2018-2019, Carnegie Mellon University
 #  See LICENSE for details
 
+if [[ ! -f ../../targets/cx400-remote/cx_homedir.txt ]]; then
+  ssh cx pwd > ../../targets/cx400-remote/cx_homedir.txt
+fi
+
 SPIRALREMOTE=_spiral-remote_
 CX_HOMEDIR=$(cat ../../targets/cx400-remote/cx_homedir.txt)
 DIRNAME=$(basename $PWD)
@@ -18,4 +22,4 @@ rm -r ../../targets/cx400-remote-$DIRNAME
 EOL
 
 scp cx:$TEMPDIR/time.txt .
-ssh cx rm -rf $TEMPDIR &
+ssh cx rm -rf $TEMPDIR
