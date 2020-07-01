@@ -5,4 +5,10 @@
 
 TEMPDIR=$PWD
 
-make -R -C ../../targets/linux-x86 GAP="$TEMPDIR/testcode.c" STUB="$TEMPDIR/testcode.h" CC="gcc" CFLAGS="-O2 -Wall -fomit-frame-pointer -march=native -std=c99" OUTDIR="$TEMPDIR" -s > time.txt
+# to use a profiler target in parallel
+cp -r ../../targets/linux-x86 ../../targets/linux-x86-$$
+
+make -R -C ../../targets/linux-x86-$$ GAP="$TEMPDIR/testcode.c" STUB="$TEMPDIR/testcode.h" CC="icc" CFLAGS="-O2 -Wall -fomit-frame-pointer -march=native -std=c99" OUTDIR="$TEMPDIR" -s > time.txt
+
+# remove temporary directory
+rm -rf ../../targets/linux-x86-$$
