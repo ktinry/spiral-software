@@ -14,7 +14,9 @@ gap/src/machine_endian.h
 # Windows
 *.exe
 
-
-
-
+# Custom
+_spiral.g
+spiral
+spirald
+rsync-template.txt
 
